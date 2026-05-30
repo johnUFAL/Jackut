@@ -28,15 +28,22 @@ public class ControladorDeUsuarios {
         this.usuarios.put(login, u);
     }
 
-    public String getAtributoUsuario(String login, String atributos) throws Exception {
+    public String getAtributoUsuario(String login, String atributo) throws Exception {
         if (!this.usuarios.containsKey(login)) throw new UsuarioNaoCadastrado();
         Usuario u = this.usuarios.get(login);
 
-        if (atributos.equals("nome")) {
+        if (atributo.equals("nome")) {
             return u.getNome();
         }
-        throw  new Exception("Atributo inválido");
+        if (atributo.equals("login")) {
+            return u.getLogin();
+        }
 
+        if (!u.getPerfil().containsKey(atributo)) {
+            throw new AtributoNaoPreenchido();
+        }
+
+        return u.getPerfil().get(atributo);
     }
 
     public String abrirSessap(String login, String senha) throws Exception {
@@ -45,5 +52,21 @@ public class ControladorDeUsuarios {
         if (!u.getSenha().equals(senha)) throw new LoginSenhaInvalida();
 
         return login;
+    }
+
+    public void editarPerfil(String id, String atributo, String valor) throws Exception {
+        if (!this.usuarios.containsKey(id)) {
+            throw new UsuarioNaoCadastrado();
+        }
+
+        Usuario u = this.usuarios.get(id);
+
+        if (atributo.equals("nome")) {
+            u.setNome(valor);
+        } else if (atributo.equals("senha")) {
+            u.setSenha(valor);
+        } else {
+            u.getPerfil().put(atributo, valor);
+        }
     }
 }

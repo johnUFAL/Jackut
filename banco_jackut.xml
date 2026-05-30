@@ -4,43 +4,57 @@
   <void property="usuarios">
    <void method="put">
     <string>jpsauve</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario">
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario0">
      <void property="login">
       <string>jpsauve</string>
      </void>
      <void property="nome">
       <string>Jacques Sauve</string>
      </void>
+     <void property="perfil">
+      <void method="put">
+       <string>descricao</string>
+       <string>Quem souber, me diga.</string>
+      </void>
+      <void method="put">
+       <string>estadoCivil</string>
+       <string>casado(a)</string>
+      </void>
+      <void method="put">
+       <string>aniversario</string>
+       <string>05/02</string>
+      </void>
+      <void method="put">
+       <string>filhos</string>
+       <string>sim, moram comigo.</string>
+      </void>
+      <void method="put">
+       <string>idiomas</string>
+       <string>ingles, frances, portugues</string>
+      </void>
+      <void method="put">
+       <string>cidadeNatal</string>
+       <string>Hull, Canada</string>
+      </void>
+      <void method="put">
+       <string>estilo</string>
+       <string>casual</string>
+      </void>
+      <void method="put">
+       <string>fumo</string>
+       <string>nao</string>
+      </void>
+      <void method="put">
+       <string>bebo</string>
+       <string>socialmente</string>
+      </void>
+      <void method="put">
+       <string>moro</string>
+       <string>com companheiro(a)</string>
+      </void>
+     </void>
      <void property="senha">
       <string>sauvejp</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <string>jpsauve2</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario">
-     <void property="login">
-      <string>jpsauve2</string>
-     </void>
-     <void property="nome">
-      <string>Jacques Sauve</string>
-     </void>
-     <void property="senha">
-      <string>sauvejp</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <string>jpsauve3</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario">
-     <void property="login">
-      <string>jpsauve3</string>
-     </void>
-     <void property="nome">
-      <string></string>
-     </void>
-     <void property="senha">
-      <string>3sauvejp</string>
      </void>
     </object>
    </void>

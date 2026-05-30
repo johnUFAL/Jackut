@@ -33,6 +33,10 @@ public class Facade {
         return this.controladorUsuarios.getAtributoUsuario(login, atributo);
     }
 
+    public void editarPerfil(String id, String atributo, String valor) throws Exception {
+        this.controladorUsuarios.editarPerfil(id, atributo, valor);
+    }
+
     private void salvarDados() {
         try (XMLEncoder encoder = new XMLEncoder((new BufferedOutputStream((new FileOutputStream("banco_jackut.xml")))))) {
             encoder.writeObject(this.controladorUsuarios);
