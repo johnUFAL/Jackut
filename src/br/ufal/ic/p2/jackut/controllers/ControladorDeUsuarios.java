@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class ControladorDeUsuarios {
-    private  Map<String, Usuario> usuarios;
+    private Map<String, Usuario> usuarios;
 
     public ControladorDeUsuarios() {
         this.usuarios = new LinkedHashMap<>();
@@ -69,4 +69,50 @@ public class ControladorDeUsuarios {
             u.getPerfil().put(atributo, valor);
         }
     }
+
+    public void adicionarAmigo(String idSessao, String idAmigo) throws Exception {
+        if (!this.usuarios.containsKey(idSessao) || !this.usuarios.containsKey(idAmigo)) {
+            throw new UsuarioNaoCadastrado();
+        }
+
+        if (idSessao.equals(idAmigo)) {
+            throw new AdicionarASiMesmo();
+        }
+
+        Usuario remetente = this.usuarios.get(idSessao);
+        Usuario destinantario = this.usuarios.get(idAmigo);
+
+        if (remetente.getAmigos().contains(idAmigo)) {
+            throw new JaEhAmigo();
+        }
+
+        if (remetente.getConvitesEnviados().contains(idAmigo)) {
+            destinantario.getConvitesEnviados().remove(idSessao);
+            remetente.getAmigos().add(idAmigo);
+            destinantario.getAmigos().add(idSessao);
+        } else {
+            remetente.getConvitesEnviados().add(idAmigo);
+        }
+    }
+
+    public boolean ehAmigo(String login, String amigo) {
+        if (!this.usuarios.containsKey(login)) return false;
+        return this.usuarios.get(login).getAmigos().contains(amigo);
+    }
+
+    public String getAmigos(String login) throws  Exception {
+        if (!this.usuarios.containsKey(login)) throw new UsuarioNaoCadastrado();
+        Usuario u = this.usuarios.get(login);
+
+        StringBuilder sb = new StringBuilder("{");
+        for (int i = 0; i < u.getAmigos().size(); i++) {
+            sb.append(u.getAmigos().get(i));
+            if (i < u.getAmigos().size() - 1) {
+                sb.append(",");
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
 }

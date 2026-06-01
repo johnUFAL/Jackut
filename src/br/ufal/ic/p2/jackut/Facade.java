@@ -37,6 +37,18 @@ public class Facade {
         this.controladorUsuarios.editarPerfil(id, atributo, valor);
     }
 
+    public void adicionarAmigo(String id, String amigo) throws Exception {
+        this.controladorUsuarios.adicionarAmigo(id, amigo);
+    }
+
+    public boolean ehAmigo(String login, String amigo) {
+        return this.controladorUsuarios.ehAmigo(login, amigo);
+    }
+
+    public String getAmigos(String login) throws Exception{
+        return this.controladorUsuarios.getAmigos(login);
+    }
+
     private void salvarDados() {
         try (XMLEncoder encoder = new XMLEncoder((new BufferedOutputStream((new FileOutputStream("banco_jackut.xml")))))) {
             encoder.writeObject(this.controladorUsuarios);
