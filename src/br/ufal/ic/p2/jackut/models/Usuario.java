@@ -12,11 +12,13 @@ public class Usuario {
     private Map<String, String> perfil;
     private List<String> amigos;
     private List<String> convitesEnviados;
+    private List<String> recados;
 
     public Usuario() {
         this.perfil = new LinkedHashMap<>();
         this.amigos = new ArrayList<>();
         this.convitesEnviados = new ArrayList<>();
+        this.recados = new ArrayList<>();
     }
 
     public Usuario(String login, String senha, String nome) {
@@ -26,6 +28,7 @@ public class Usuario {
         this.perfil = new LinkedHashMap<>();
         this.amigos = new ArrayList<>();
         this.convitesEnviados = new ArrayList<>();
+        this.recados = new ArrayList<>();
     }
 
     public String getLogin() {return login;}
@@ -34,6 +37,7 @@ public class Usuario {
     public Map<String, String> getPerfil() {return perfil;}
     public List<String> getAmigos() {return amigos;}
     public List<String> getConvitesEnviados() {return convitesEnviados;}
+    public List<String> getRecados() {return recados;}
 
     public void setLogin(String login) {this.login = login;}
     public void setSenha(String senha) {this.senha = senha;}
@@ -41,4 +45,5 @@ public class Usuario {
     public void setPerfil(Map<String, String> perfil) {this.perfil = perfil;}
     public void setAmigos(List<String> amigos) {this.amigos = amigos;}
     public void setConvitesEnviados(List<String> convitesEnviados) {this.convitesEnviados = convitesEnviados;}
+    public void setRecados(List<String> recados) {this.recados = recados;}
 }

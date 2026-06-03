@@ -4,20 +4,7 @@
   <void property="usuarios">
    <void method="put">
     <string>jpsauve</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario0">
-     <void property="amigos">
-      <void method="add">
-       <string>oabath</string>
-      </void>
-     </void>
-     <void property="convitesEnviados">
-      <void method="add">
-       <string>oabath</string>
-      </void>
-      <void method="add">
-       <string>jdoe</string>
-      </void>
-     </void>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario">
      <void property="login">
       <string>jpsauve</string>
      </void>
@@ -31,17 +18,7 @@
    </void>
    <void method="put">
     <string>oabath</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario1">
-     <void property="amigos">
-      <void method="add">
-       <string>jpsauve</string>
-      </void>
-     </void>
-     <void property="convitesEnviados">
-      <void method="add">
-       <string>jdoe</string>
-      </void>
-     </void>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario">
      <void property="login">
       <string>oabath</string>
      </void>
@@ -55,15 +32,7 @@
    </void>
    <void method="put">
     <string>jdoe</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario2">
-     <void property="convitesEnviados">
-      <void method="add">
-       <string>jpsauve</string>
-      </void>
-      <void method="add">
-       <string>oabath</string>
-      </void>
-     </void>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario">
      <void property="login">
       <string>jdoe</string>
      </void>

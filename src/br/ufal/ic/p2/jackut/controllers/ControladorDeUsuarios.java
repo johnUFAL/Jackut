@@ -74,7 +74,6 @@ public class ControladorDeUsuarios {
         if (!this.usuarios.containsKey(idSessao) || !this.usuarios.containsKey(idAmigo)) {
             throw new UsuarioNaoCadastrado();
         }
-
         if (idSessao.equals(idAmigo)) {
             throw new AdicionarASiMesmo();
         }
@@ -86,11 +85,14 @@ public class ControladorDeUsuarios {
             throw new JaEhAmigo();
         }
 
-        if (remetente.getConvitesEnviados().contains(idAmigo)) {
+        if (destinantario.getConvitesEnviados().contains(idSessao)) {
             destinantario.getConvitesEnviados().remove(idSessao);
             remetente.getAmigos().add(idAmigo);
             destinantario.getAmigos().add(idSessao);
         } else {
+            if (remetente.getConvitesEnviados().contains(idAmigo)) {
+                throw new ConvitePendente();
+            }
             remetente.getConvitesEnviados().add(idAmigo);
         }
     }
@@ -113,6 +115,27 @@ public class ControladorDeUsuarios {
         }
         sb.append("}");
         return sb.toString();
+    }
+
+    public void enviarRecado(String idSessao, String destinatario, String recado) throws Exception {
+        if (!this.usuarios.containsKey(destinatario)) {
+            throw  new UsuarioNaoCadastrado();
+        }
+        if (idSessao.equals(destinatario)) {
+            throw new NaoPodeEnviarRecadoASiMesmo();
+        }
+
+        this.usuarios.get(destinatario).getRecados().add(recado);
+    }
+
+    public String lerRecado(String idSessao) throws Exception {
+        Usuario u = this.usuarios.get(idSessao);
+
+        if (u.getRecados().isEmpty()) {
+            throw new NaoHaReacados();
+        }
+
+        return u.getRecados().remove(0);
     }
 
 }

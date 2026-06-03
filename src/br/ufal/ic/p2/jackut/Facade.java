@@ -49,6 +49,14 @@ public class Facade {
         return this.controladorUsuarios.getAmigos(login);
     }
 
+    public void enviarRecado(String id, String destinatario, String recado) throws Exception {
+        this.controladorUsuarios.enviarRecado(id, destinatario, recado);
+    }
+
+    public String lerRecado(String id) throws Exception {
+        return this.controladorUsuarios.lerRecado(id);
+    }
+
     private void salvarDados() {
         try (XMLEncoder encoder = new XMLEncoder((new BufferedOutputStream((new FileOutputStream("banco_jackut.xml")))))) {
             encoder.writeObject(this.controladorUsuarios);
