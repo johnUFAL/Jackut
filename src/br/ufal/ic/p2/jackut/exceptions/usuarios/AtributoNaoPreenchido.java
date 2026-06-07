@@ -1,7 +1,7 @@
 package br.ufal.ic.p2.jackut.exceptions.usuarios;
 
-public class AtributoNaoPreenchido extends RuntimeException{
+public class AtributoNaoPreenchido extends RuntimeException {
     public AtributoNaoPreenchido() {
-        super("Atributo n�o preenchido.");
+        super("Atributo n\uFFFDo preenchido.");
     }
 }

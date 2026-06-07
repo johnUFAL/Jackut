@@ -1,7 +1,7 @@
 package br.ufal.ic.p2.jackut.exceptions.usuarios;
 
-public class NaoPodeEnviarRecadoASiMesmo extends RuntimeException{
+public class NaoPodeEnviarRecadoASiMesmo extends RuntimeException {
     public NaoPodeEnviarRecadoASiMesmo() {
-        super("Usu�rio n�o pode enviar recado para si mesmo.");
+        super("Usu\uFFFDrio n\uFFFDo pode enviar recado para si mesmo.");
     }
 }
