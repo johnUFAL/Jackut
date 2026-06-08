@@ -14,17 +14,22 @@ import java.util.List;
  */
 public class Usuario implements Serializable {
 
+    /** Identificador único do usuário no sistema. */
     private String login;
+
+    /** Senha de acesso do usuário. */
     private String senha;
+
+    /** Nome de exibição do usuário. */
     private String nome;
 
-    /** Mapa que armazena os atributos customizáveis do perfil do usuário. */
+    /** Mapa dinâmico que armazena os atributos do perfil do usuário. */
     private Map<String, String> perfil;
 
     /** Lista contendo os logins dos amigos confirmados do usuário. */
     private List<String> amigos;
 
-    /** Lista contendo os logins dos usuários que o  usuário enviou um convite de amizade. */
+    /** Lista contendo os logins dos usuários que este usuário enviou um convite de amizade. */
     private List<String> convitesEnviados;
 
     /** Fila contendo os recados recebidos pelo usuário. */
