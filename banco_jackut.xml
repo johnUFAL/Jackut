@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="26" class="java.beans.XMLDecoder">
- <object class="br.ufal.ic.p2.jackut.controllers.ControladorDeUsuarios" id="ControladorDeUsuarios0">
+ <object class="br.ufal.ic.p2.jackut.controllers.RepositorioJackut" id="RepositorioJackut0">
   <void property="usuarios">
    <void method="put">
     <string>jpsauve</string>
