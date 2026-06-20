@@ -27,11 +27,21 @@ public class Comunidade extends EntidadeJackut{
         for (int i = 0; i < this.membros.size(); i++) {
             sb.append(this.membros.get(i));
             if (i < this.membros.size() - 1) {
-                sb.append(", ");
+                sb.append(",");
             }
         }
         sb.append("}");
         return sb.toString();
+    }
+
+    public void adicionarMembro(String login) {
+        if (!this.membros.contains(login)) {
+            this.membros.add(login);
+        }
+    }
+
+    public boolean possuiMembro(String login) {
+        return this.membros.contains(login);
     }
 
     @Override

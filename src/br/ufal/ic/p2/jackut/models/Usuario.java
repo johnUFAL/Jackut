@@ -16,6 +16,7 @@ public class Usuario extends EntidadeJackut {
     private List<String> amigos;
     private List<String> convitesEnviados;
     private List<String> recados;
+    private List<String> comunidades;
 
     public Usuario() {
         super();
@@ -23,6 +24,7 @@ public class Usuario extends EntidadeJackut {
         this.amigos = new ArrayList<>();
         this.convitesEnviados = new ArrayList<>();
         this.recados = new ArrayList<>();
+        this.comunidades = new ArrayList<>();
     }
 
     public Usuario(String login, String senha, String nome) {
@@ -33,6 +35,7 @@ public class Usuario extends EntidadeJackut {
         this.amigos = new ArrayList<>();
         this.convitesEnviados = new ArrayList<>();
         this.recados = new ArrayList<>();
+        this.comunidades = new ArrayList<>();
     }
 
     public void adicionarAtributoPerfil(String atributo, String valor) {
@@ -81,6 +84,24 @@ public class Usuario extends EntidadeJackut {
         return sb.toString();
     }
 
+    public void entrarNaComunidade(String nomeComunidade) {
+        if (!this.comunidades.contains(nomeComunidade)) {
+            this.comunidades.add(nomeComunidade);
+        }
+    }
+
+    public String formatarListaDeComunidades() {
+        StringBuilder sb = new StringBuilder("{");
+        for (int i = 0; i < this.comunidades.size(); i++) {
+            sb.append(this.comunidades.get(i));
+            if (i < this.comunidades.size() - 1) {
+                sb.append(",");
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
     @Override
     public void receberRecado(String recado) {
         this.recados.add(recado);
@@ -103,4 +124,6 @@ public class Usuario extends EntidadeJackut {
     public void setConvitesEnviados(List<String> convitesEnviados) { this.convitesEnviados = convitesEnviados; }
     public List<String> getRecados() { return recados; }
     public void setRecados(List<String> recados) { this.recados = recados; }
+    public List<String> getComunidades() { return comunidades; }
+    public void setComunidades(List<String> comunidades) { this.comunidades = comunidades; }
 }

@@ -3,27 +3,8 @@
  <object class="br.ufal.ic.p2.jackut.controllers.RepositorioJackut" id="RepositorioJackut0">
   <void property="comunidades">
    <void method="put">
-    <string>UFCG</string>
-    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade0">
-     <void property="descricao">
-      <string>Comunidade para professores, alunos e funcion�rios da UFCG</string>
-     </void>
-     <void property="dono">
-      <string>jpsauve</string>
-     </void>
-     <void property="membros">
-      <void method="add">
-       <string>jpsauve</string>
-      </void>
-     </void>
-     <void property="nome">
-      <string>UFCG</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
     <string>Professores da UFCG</string>
-    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade1">
+    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade0">
      <void property="descricao">
       <string>Comunidade para professores da UFCG</string>
      </void>
@@ -34,6 +15,9 @@
       <void method="add">
        <string>jpsauve</string>
       </void>
+      <void method="add">
+       <string>oabath</string>
+      </void>
      </void>
      <void property="nome">
       <string>Professores da UFCG</string>
@@ -41,27 +25,8 @@
     </object>
    </void>
    <void method="put">
-    <string>UFCG2</string>
-    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade2">
-     <void property="descricao">
-      <string>Comunidade para professores, alunos e funcion�rios da UFCG</string>
-     </void>
-     <void property="dono">
-      <string>jpsauve</string>
-     </void>
-     <void property="membros">
-      <void method="add">
-       <string>jpsauve</string>
-      </void>
-     </void>
-     <void property="nome">
-      <string>UFCG2</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
     <string>Alunos da UFCG</string>
-    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade3">
+    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade1">
      <void property="descricao">
       <string>Comunidade para alunos da UFCG</string>
      </void>
@@ -71,6 +36,9 @@
      <void property="membros">
       <void method="add">
        <string>oabath</string>
+      </void>
+      <void method="add">
+       <string>jpsauve</string>
       </void>
      </void>
      <void property="nome">
@@ -82,7 +50,15 @@
   <void property="usuarios">
    <void method="put">
     <string>jpsauve</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario">
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario0">
+     <void property="comunidades">
+      <void method="add">
+       <string>Professores da UFCG</string>
+      </void>
+      <void method="add">
+       <string>Alunos da UFCG</string>
+      </void>
+     </void>
      <void property="login">
       <string>jpsauve</string>
      </void>
@@ -96,7 +72,15 @@
    </void>
    <void method="put">
     <string>oabath</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario">
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario1">
+     <void property="comunidades">
+      <void method="add">
+       <string>Alunos da UFCG</string>
+      </void>
+      <void method="add">
+       <string>Professores da UFCG</string>
+      </void>
+     </void>
      <void property="login">
       <string>oabath</string>
      </void>

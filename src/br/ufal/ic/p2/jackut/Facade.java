@@ -120,6 +120,14 @@ public class Facade {
         return this.servicoDeComunidades.getMembrosComunidade(nome);
     }
 
+    public void adicionarComunidade(String sessao, String nome) throws Exception {
+        this.servicoDeComunidades.adionarComunidade(sessao, nome);
+    }
+
+    public String getComunidades(String login) throws Exception {
+        return this.servicoDeComunidades.getComunidades(login);
+    }
+
 // =========================================================================
     // PERSISTÊNCIA DE DADOS
     // =========================================================================
