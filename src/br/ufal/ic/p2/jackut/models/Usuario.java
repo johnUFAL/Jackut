@@ -1,6 +1,7 @@
 package br.ufal.ic.p2.jackut.models;
 
 import br.ufal.ic.p2.jackut.exceptions.usuarios.AtributoNaoPreenchido;
+import br.ufal.ic.p2.jackut.exceptions.usuarios.NaoHaMensagens;
 import br.ufal.ic.p2.jackut.exceptions.usuarios.NaoHaReacados;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class Usuario extends EntidadeJackut {
     private List<String> convitesEnviados;
     private List<String> recados;
     private List<String> comunidades;
+    private List<String> mensagens;
 
     public Usuario() {
         super();
@@ -25,6 +27,7 @@ public class Usuario extends EntidadeJackut {
         this.convitesEnviados = new ArrayList<>();
         this.recados = new ArrayList<>();
         this.comunidades = new ArrayList<>();
+        this.mensagens = new ArrayList<>();
     }
 
     public Usuario(String login, String senha, String nome) {
@@ -36,6 +39,7 @@ public class Usuario extends EntidadeJackut {
         this.convitesEnviados = new ArrayList<>();
         this.recados = new ArrayList<>();
         this.comunidades = new ArrayList<>();
+        this.mensagens = new ArrayList<>();
     }
 
     public void adicionarAtributoPerfil(String atributo, String valor) {
@@ -102,6 +106,15 @@ public class Usuario extends EntidadeJackut {
         return sb.toString();
     }
 
+    public void receberMensagem(String mensagem) {
+        this.mensagens.add(mensagem);
+    }
+
+    public String lerProximaMensagem() throws Exception {
+        if (this.mensagens.isEmpty()) throw  new NaoHaMensagens();
+        return this.mensagens.remove(0);
+    }
+
     @Override
     public void receberRecado(String recado) {
         this.recados.add(recado);
@@ -126,4 +139,6 @@ public class Usuario extends EntidadeJackut {
     public void setRecados(List<String> recados) { this.recados = recados; }
     public List<String> getComunidades() { return comunidades; }
     public void setComunidades(List<String> comunidades) { this.comunidades = comunidades; }
+    public List<String> getMensagens() { return mensagens; }
+    public void setMensagens(List<String> mensagens) { this.mensagens = mensagens; }
 }

@@ -21,6 +21,7 @@ public class Facade {
     private ServicoDeAmizades servicoDeAmizades;
     private ServicoDeRecados servicoDeRecados;
     private ServicoDeComunidades servicoDeComunidades;
+    private ServicoDeMensagens servicoDeMensagens;
 
     /**
      * Construtor padrão da Facade.
@@ -35,6 +36,7 @@ public class Facade {
         this.servicoDeAmizades = new ServicoDeAmizades(this.repositorio);
         this.servicoDeRecados = new ServicoDeRecados(this.repositorio);
         this.servicoDeComunidades = new ServicoDeComunidades(this.repositorio);
+        this.servicoDeMensagens = new ServicoDeMensagens(this.repositorio);
     }
 
     /**
@@ -128,7 +130,19 @@ public class Facade {
         return this.servicoDeComunidades.getComunidades(login);
     }
 
-// =========================================================================
+    // =========================================================================
+    // SERVIÇO DE MENSAGENS (COMUNIDADES)
+    // =========================================================================
+
+    public void enviarMensagem(String id, String comunidade, String mensagem) throws Exception {
+        this.servicoDeMensagens.enviarMensagem(id, comunidade, mensagem);
+    }
+
+    public String lerMensagem(String id) throws Exception {
+        return this.servicoDeMensagens.lerMensagem(id);
+    }
+
+    // =========================================================================
     // PERSISTÊNCIA DE DADOS
     // =========================================================================
 

@@ -3,10 +3,10 @@
  <object class="br.ufal.ic.p2.jackut.controllers.RepositorioJackut" id="RepositorioJackut0">
   <void property="comunidades">
    <void method="put">
-    <string>Professores da UFCG</string>
+    <string>Comunidade de Jacques</string>
     <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade0">
      <void property="descricao">
-      <string>Comunidade para professores da UFCG</string>
+      <string>abc</string>
      </void>
      <void property="dono">
       <string>jpsauve</string>
@@ -18,17 +18,20 @@
       <void method="add">
        <string>oabath</string>
       </void>
+      <void method="add">
+       <string>jdoe</string>
+      </void>
      </void>
      <void property="nome">
-      <string>Professores da UFCG</string>
+      <string>Comunidade de Jacques</string>
      </void>
     </object>
    </void>
    <void method="put">
-    <string>Alunos da UFCG</string>
+    <string>Comunidade de Osorio</string>
     <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade1">
      <void property="descricao">
-      <string>Comunidade para alunos da UFCG</string>
+      <string>abc</string>
      </void>
      <void property="dono">
       <string>oabath</string>
@@ -37,12 +40,28 @@
       <void method="add">
        <string>oabath</string>
       </void>
+     </void>
+     <void property="nome">
+      <string>Comunidade de Osorio</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>Comunidade de John</string>
+    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade2">
+     <void property="descricao">
+      <string>abc</string>
+     </void>
+     <void property="dono">
+      <string>jdoe</string>
+     </void>
+     <void property="membros">
       <void method="add">
-       <string>jpsauve</string>
+       <string>jdoe</string>
       </void>
      </void>
      <void property="nome">
-      <string>Alunos da UFCG</string>
+      <string>Comunidade de John</string>
      </void>
     </object>
    </void>
@@ -53,10 +72,7 @@
     <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario0">
      <void property="comunidades">
       <void method="add">
-       <string>Professores da UFCG</string>
-      </void>
-      <void method="add">
-       <string>Alunos da UFCG</string>
+       <string>Comunidade de Jacques</string>
       </void>
      </void>
      <void property="login">
@@ -64,6 +80,14 @@
      </void>
      <void property="nome">
       <string>Jacques Sauve</string>
+     </void>
+     <void property="recados">
+      <void method="add">
+       <string>Recado de Osorio para Jacques</string>
+      </void>
+      <void method="add">
+       <string>Recado de John para Jacques</string>
+      </void>
      </void>
      <void property="senha">
       <string>sauvejp</string>
@@ -75,10 +99,10 @@
     <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario1">
      <void property="comunidades">
       <void method="add">
-       <string>Alunos da UFCG</string>
+       <string>Comunidade de Osorio</string>
       </void>
       <void method="add">
-       <string>Professores da UFCG</string>
+       <string>Comunidade de Jacques</string>
       </void>
      </void>
      <void property="login">
@@ -87,8 +111,46 @@
      <void property="nome">
       <string>Osorio Abath</string>
      </void>
+     <void property="recados">
+      <void method="add">
+       <string>Recado de Jacques para Osorio</string>
+      </void>
+      <void method="add">
+       <string>Recado de John para Osorio</string>
+      </void>
+     </void>
      <void property="senha">
       <string>abatho</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>jdoe</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario2">
+     <void property="comunidades">
+      <void method="add">
+       <string>Comunidade de John</string>
+      </void>
+      <void method="add">
+       <string>Comunidade de Jacques</string>
+      </void>
+     </void>
+     <void property="login">
+      <string>jdoe</string>
+     </void>
+     <void property="nome">
+      <string>John Doe</string>
+     </void>
+     <void property="recados">
+      <void method="add">
+       <string>Recado de Osorio para John</string>
+      </void>
+      <void method="add">
+       <string>Recado de Jacques para John</string>
+      </void>
+     </void>
+     <void property="senha">
+      <string>abc</string>
      </void>
     </object>
    </void>
