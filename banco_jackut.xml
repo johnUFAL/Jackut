@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="26" class="java.beans.XMLDecoder">
  <object class="br.ufal.ic.p2.jackut.controllers.RepositorioJackut" id="RepositorioJackut0">
+  <void property="comunidades">
+   <void method="put">
+    <string>UFCG</string>
+    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade0">
+     <void property="descricao">
+      <string>Comunidade para professores, alunos e funcion�rios da UFCG</string>
+     </void>
+     <void property="dono">
+      <string>jpsauve</string>
+     </void>
+     <void property="membros">
+      <void method="add">
+       <string>jpsauve</string>
+      </void>
+     </void>
+     <void property="nome">
+      <string>UFCG</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>Professores da UFCG</string>
+    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade1">
+     <void property="descricao">
+      <string>Comunidade para professores da UFCG</string>
+     </void>
+     <void property="dono">
+      <string>jpsauve</string>
+     </void>
+     <void property="membros">
+      <void method="add">
+       <string>jpsauve</string>
+      </void>
+     </void>
+     <void property="nome">
+      <string>Professores da UFCG</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>UFCG2</string>
+    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade2">
+     <void property="descricao">
+      <string>Comunidade para professores, alunos e funcion�rios da UFCG</string>
+     </void>
+     <void property="dono">
+      <string>jpsauve</string>
+     </void>
+     <void property="membros">
+      <void method="add">
+       <string>jpsauve</string>
+      </void>
+     </void>
+     <void property="nome">
+      <string>UFCG2</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>Alunos da UFCG</string>
+    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade3">
+     <void property="descricao">
+      <string>Comunidade para alunos da UFCG</string>
+     </void>
+     <void property="dono">
+      <string>oabath</string>
+     </void>
+     <void property="membros">
+      <void method="add">
+       <string>oabath</string>
+      </void>
+     </void>
+     <void property="nome">
+      <string>Alunos da UFCG</string>
+     </void>
+    </object>
+   </void>
+  </void>
   <void property="usuarios">
    <void method="put">
     <string>jpsauve</string>
@@ -27,20 +105,6 @@
      </void>
      <void property="senha">
       <string>abatho</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <string>jdoe</string>
-    <object class="br.ufal.ic.p2.jackut.models.Usuario">
-     <void property="login">
-      <string>jdoe</string>
-     </void>
-     <void property="nome">
-      <string>John Doe</string>
-     </void>
-     <void property="senha">
-      <string>abc</string>
      </void>
     </object>
    </void>

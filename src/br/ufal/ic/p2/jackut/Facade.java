@@ -20,6 +20,7 @@ public class Facade {
     private ServicoDePerfil servicoDePerfil;
     private ServicoDeAmizades servicoDeAmizades;
     private ServicoDeRecados servicoDeRecados;
+    private ServicoDeComunidades servicoDeComunidades;
 
     /**
      * Construtor padrão da Facade.
@@ -33,6 +34,7 @@ public class Facade {
         this.servicoDePerfil = new ServicoDePerfil(this.repositorio);
         this.servicoDeAmizades = new ServicoDeAmizades(this.repositorio);
         this.servicoDeRecados = new ServicoDeRecados(this.repositorio);
+        this.servicoDeComunidades = new ServicoDeComunidades(this.repositorio);
     }
 
     /**
@@ -99,6 +101,26 @@ public class Facade {
     }
 
     // =========================================================================
+    // SERVIÇO DE COMUNIDADES
+    // =========================================================================
+
+    public void criarComunidade(String sessao, String nome, String descricao) throws Exception {
+        this.servicoDeComunidades.criarComunidade(sessao, nome, descricao);
+    }
+
+    public String getDescricaoComunidade(String nome) throws  Exception {
+        return this.servicoDeComunidades.getDescricaoComunidade(nome);
+    }
+
+    public String getDonoComunidade(String nome) throws Exception {
+        return this.servicoDeComunidades.getDonoComunidade(nome);
+    }
+
+    public String getMembrosComunidade(String nome) throws Exception {
+        return this.servicoDeComunidades.getMembrosComunidade(nome);
+    }
+
+// =========================================================================
     // PERSISTÊNCIA DE DADOS
     // =========================================================================
 
@@ -115,7 +137,9 @@ public class Facade {
             this.repositorio = (RepositorioJackut) decoder.readObject();
         } catch (Exception e) {
         } finally {
-            if (this.repositorio == null) this.repositorio = new RepositorioJackut();
+            if (this.repositorio == null) {
+                this.repositorio = new RepositorioJackut();
+            }
         }
     }
 }
