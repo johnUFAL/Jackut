@@ -22,6 +22,7 @@ public class Facade {
     private ServicoDeRecados servicoDeRecados;
     private ServicoDeComunidades servicoDeComunidades;
     private ServicoDeMensagens servicoDeMensagens;
+    private ServicoDeRelacionamentos servicoDeRelacionamentos;
 
     /**
      * Construtor padrão da Facade.
@@ -37,6 +38,7 @@ public class Facade {
         this.servicoDeRecados = new ServicoDeRecados(this.repositorio);
         this.servicoDeComunidades = new ServicoDeComunidades(this.repositorio);
         this.servicoDeMensagens = new ServicoDeMensagens(this.repositorio);
+        this.servicoDeRelacionamentos = new ServicoDeRelacionamentos(this.repositorio);
     }
 
     /**
@@ -140,6 +142,34 @@ public class Facade {
 
     public String lerMensagem(String id) throws Exception {
         return this.servicoDeMensagens.lerMensagem(id);
+    }
+
+    // =========================================================================
+    // SERVIÇO DE RELACIONAMENTOS (COMUNIDADES)
+    // =========================================================================
+
+    public void adicionarIdolo(String id, String idolo) throws Exception {
+        this.servicoDeRelacionamentos.adicionarIdolo(id, idolo);
+    }
+    public boolean ehFa(String login, String idolo) {
+        return this.servicoDeRelacionamentos.ehFa(login, idolo);
+    }
+    public String getFas(String login) throws Exception {
+        return this.servicoDeRelacionamentos.getFas(login);
+    }
+
+    public void adicionarPaquera(String id, String paquera) throws Exception {
+        this.servicoDeRelacionamentos.adicionarPaquera(id, paquera);
+    }
+    public boolean ehPaquera(String id, String paquera) {
+        return this.servicoDeRelacionamentos.ehPaquera(id, paquera);
+    }
+    public String getPaqueras(String id) throws Exception {
+        return this.servicoDeRelacionamentos.getPaqueras(id);
+    }
+
+    public void adicionarInimigo(String id, String inimigo) throws Exception {
+        this.servicoDeRelacionamentos.adicionarInimigo(id, inimigo);
     }
 
     // =========================================================================

@@ -1,7 +1,7 @@
 package br.ufal.ic.p2.jackut.controllers;
 
 import br.ufal.ic.p2.jackut.exceptions.comunidades.*;
-import br.ufal.ic.p2.jackut.exceptions.usuarios.UsuarioNaoCadastrado;
+import br.ufal.ic.p2.jackut.exceptions.usuarios.UsuarioNaoCadastradoException;
 import br.ufal.ic.p2.jackut.models.Comunidade;
 import br.ufal.ic.p2.jackut.models.Usuario;
 
@@ -15,7 +15,7 @@ public class ServicoDeComunidades {
 
     public void criarComunidade(String idSessao, String nome, String descricao) throws Exception {
         if (repo.existeComunidade(nome)) {
-            throw new ComunidadeJaExiste();
+            throw new ComunidadeJaExisteException();
         }
 
         Comunidade c = new Comunidade(nome, descricao, idSessao);
@@ -25,29 +25,29 @@ public class ServicoDeComunidades {
     }
 
     public String getDescricaoComunidade(String nome) throws Exception {
-        if (!repo.existeComunidade(nome)) throw new ComunidadeNaoExiste();
+        if (!repo.existeComunidade(nome)) throw new ComunidadeNaoExisteException();
         return repo.buscarComunidade(nome).getDescricao();
     }
 
     public String getDonoComunidade(String nome) throws Exception {
-        if (!repo.existeComunidade(nome)) throw new ComunidadeNaoExiste();
+        if (!repo.existeComunidade(nome)) throw new ComunidadeNaoExisteException();
         return repo.buscarComunidade(nome).getDono();
     }
 
     public String getMembrosComunidade(String nome) throws Exception {
-        if (!repo.existeComunidade(nome)) throw new ComunidadeNaoExiste();
+        if (!repo.existeComunidade(nome)) throw new ComunidadeNaoExisteException();
         return repo.buscarComunidade(nome).formatarListaDeMembros();
     }
 
     public void adionarComunidade(String idSessao, String nome) throws Exception {
-        if (!repo.existeUsuario(idSessao)) throw new UsuarioNaoCadastrado();
-        if (!repo.existeComunidade(nome)) throw new ComunidadeNaoExiste();
+        if (!repo.existeUsuario(idSessao)) throw new UsuarioNaoCadastradoException();
+        if (!repo.existeComunidade(nome)) throw new ComunidadeNaoExisteException();
 
         Comunidade c = repo.buscarComunidade(nome);
         Usuario u = repo.buscarUsuario(idSessao);
 
         if (c.possuiMembro(idSessao)) {
-            throw new UsuarioJaFazParteDaComunidade();
+            throw new UsuarioJaFazParteDaComunidadeException();
         }
 
         c.adicionarMembro(idSessao);
@@ -55,7 +55,7 @@ public class ServicoDeComunidades {
     }
 
     public String getComunidades(String login) throws Exception {
-        if (!repo.existeUsuario(login)) throw new UsuarioNaoCadastrado();
+        if (!repo.existeUsuario(login)) throw new UsuarioNaoCadastradoException();
 
         return repo.buscarUsuario(login).formatarListaDeComunidades();
     }

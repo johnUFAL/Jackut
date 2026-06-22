@@ -1,5 +1,6 @@
 package br.ufal.ic.p2.jackut.controllers;
 
+import br.ufal.ic.p2.jackut.exceptions.relacionamentos.FuncaoInvalidaInimigoException;
 import br.ufal.ic.p2.jackut.exceptions.usuarios.*;
 import br.ufal.ic.p2.jackut.models.Usuario;
 
@@ -12,17 +13,17 @@ public class ServicoDeAmizades {
 
     public void adicionarAmigo(String idSessao, String idAmigo) throws Exception {
         if (!repo.existeUsuario(idSessao) || !repo.existeUsuario(idAmigo)) {
-            throw new UsuarioNaoCadastrado();
+            throw new UsuarioNaoCadastradoException();
         }
         if (idSessao.equals(idAmigo)) {
-            throw new AdicionarASiMesmo();
+            throw new AdicionarASiMesmoException();
         }
 
         Usuario remetente = repo.buscarUsuario(idSessao);
         Usuario destinatario = repo.buscarUsuario(idAmigo);
 
         if (remetente.ehAmigo(idAmigo)) {
-            throw new JaEhAmigo();
+            throw new JaEhAmigoException();
         }
 
         if (destinatario.possuiConviteDe(idSessao)) {
@@ -30,9 +31,13 @@ public class ServicoDeAmizades {
             remetente.aceitarConvite(idAmigo);
         } else {
             if (remetente.possuiConviteDe(idAmigo)) {
-                throw new ConvitePendente();
+                throw new ConvitePendenteException();
             }
             remetente.registrarConviteEnviado(idAmigo);
+        }
+
+        if (destinatario.temComoInimigo(idSessao)) {
+            throw new FuncaoInvalidaInimigoException(destinatario.getNome());
         }
     }
 
@@ -43,7 +48,7 @@ public class ServicoDeAmizades {
 
     public String getAmigos(String login) throws Exception {
         if (!repo.existeUsuario(login)) {
-            throw new UsuarioNaoCadastrado();
+            throw new UsuarioNaoCadastradoException();
         }
         return repo.buscarUsuario(login).formatarListaDeAmigos();
     }

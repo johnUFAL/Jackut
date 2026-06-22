@@ -1,0 +1,11 @@
+# User Story 8 - Cria��o de novos relacionamentos - Teste de persist�ncia
+
+s1=abrirSessao login=jacquespersistente senha=abcdef
+s2=abrirSessao login=paquerapersistentedejacques senha=abcdef
+s3=abrirSessao login=inimigopersistentedejacques senha=abcdef
+
+expect {fapersistentedejacques} getFas login=jacquespersistente
+expect {jacquespersistente} getPaqueras id=${s2}
+expectError "Fun��o inv�lida: Inimigo Persistente de Jacques � seu inimigo." adicionarAmigo id=${s1} amigo=inimigopersistentedejacques
+
+encerrarSistema

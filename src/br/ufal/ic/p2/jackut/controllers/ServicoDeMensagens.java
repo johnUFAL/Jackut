@@ -1,7 +1,7 @@
 package br.ufal.ic.p2.jackut.controllers;
 
-import br.ufal.ic.p2.jackut.exceptions.comunidades.ComunidadeNaoExiste;
-import br.ufal.ic.p2.jackut.exceptions.usuarios.UsuarioNaoCadastrado;
+import br.ufal.ic.p2.jackut.exceptions.comunidades.ComunidadeNaoExisteException;
+import br.ufal.ic.p2.jackut.exceptions.usuarios.UsuarioNaoCadastradoException;
 import br.ufal.ic.p2.jackut.models.Comunidade;
 import br.ufal.ic.p2.jackut.models.Usuario;
 
@@ -15,10 +15,10 @@ public class ServicoDeMensagens {
 
     public void enviarMensagem(String idSessao, String nomeComunidade, String mensagem) throws Exception {
         if (!repo.existeUsuario(idSessao)) {
-            throw new UsuarioNaoCadastrado();
+            throw new UsuarioNaoCadastradoException();
         }
         if (!repo.existeComunidade(nomeComunidade)) {
-            throw new ComunidadeNaoExiste();
+            throw new ComunidadeNaoExisteException();
         }
 
         Comunidade c = repo.buscarComunidade(nomeComunidade);
@@ -32,7 +32,7 @@ public class ServicoDeMensagens {
 
     public String lerMensagem(String idSessao) throws Exception {
         if (!repo.existeUsuario(idSessao)) {
-            throw new UsuarioNaoCadastrado();
+            throw new UsuarioNaoCadastradoException();
         }
         return repo.buscarUsuario(idSessao).lerProximaMensagem();
     }

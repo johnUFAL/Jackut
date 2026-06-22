@@ -1,78 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="26" class="java.beans.XMLDecoder">
  <object class="br.ufal.ic.p2.jackut.controllers.RepositorioJackut" id="RepositorioJackut0">
-  <void property="comunidades">
-   <void method="put">
-    <string>Comunidade de Jacques</string>
-    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade0">
-     <void property="descricao">
-      <string>abc</string>
-     </void>
-     <void property="dono">
-      <string>jpsauve</string>
-     </void>
-     <void property="membros">
-      <void method="add">
-       <string>jpsauve</string>
-      </void>
-      <void method="add">
-       <string>oabath</string>
-      </void>
-      <void method="add">
-       <string>jdoe</string>
-      </void>
-     </void>
-     <void property="nome">
-      <string>Comunidade de Jacques</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <string>Comunidade de Osorio</string>
-    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade1">
-     <void property="descricao">
-      <string>abc</string>
-     </void>
-     <void property="dono">
-      <string>oabath</string>
-     </void>
-     <void property="membros">
-      <void method="add">
-       <string>oabath</string>
-      </void>
-     </void>
-     <void property="nome">
-      <string>Comunidade de Osorio</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <string>Comunidade de John</string>
-    <object class="br.ufal.ic.p2.jackut.models.Comunidade" id="Comunidade2">
-     <void property="descricao">
-      <string>abc</string>
-     </void>
-     <void property="dono">
-      <string>jdoe</string>
-     </void>
-     <void property="membros">
-      <void method="add">
-       <string>jdoe</string>
-      </void>
-     </void>
-     <void property="nome">
-      <string>Comunidade de John</string>
-     </void>
-    </object>
-   </void>
-  </void>
   <void property="usuarios">
    <void method="put">
     <string>jpsauve</string>
     <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario0">
-     <void property="comunidades">
+     <void property="convitesEnviados">
       <void method="add">
-       <string>Comunidade de Jacques</string>
+       <string>inimigodejacques</string>
+      </void>
+      <void method="add">
+       <string>inimigo2dejacques</string>
+      </void>
+     </void>
+     <void property="fas">
+      <void method="add">
+       <string>fadejacques</string>
+      </void>
+      <void method="add">
+       <string>fa2dejacques</string>
       </void>
      </void>
      <void property="login">
@@ -81,12 +27,9 @@
      <void property="nome">
       <string>Jacques Sauve</string>
      </void>
-     <void property="recados">
+     <void property="paqueras">
       <void method="add">
-       <string>Recado de Osorio para Jacques</string>
-      </void>
-      <void method="add">
-       <string>Recado de John para Jacques</string>
+       <string>paqueradejacques</string>
       </void>
      </void>
      <void property="senha">
@@ -95,62 +38,221 @@
     </object>
    </void>
    <void method="put">
-    <string>oabath</string>
+    <string>fadejacques</string>
     <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario1">
-     <void property="comunidades">
+     <void property="fas">
       <void method="add">
-       <string>Comunidade de Osorio</string>
+       <string>fa2dejacques</string>
       </void>
+     </void>
+     <void property="idolos">
       <void method="add">
-       <string>Comunidade de Jacques</string>
+       <string>jpsauve</string>
       </void>
      </void>
      <void property="login">
-      <string>oabath</string>
+      <string>fadejacques</string>
      </void>
      <void property="nome">
-      <string>Osorio Abath</string>
-     </void>
-     <void property="recados">
-      <void method="add">
-       <string>Recado de Jacques para Osorio</string>
-      </void>
-      <void method="add">
-       <string>Recado de John para Osorio</string>
-      </void>
+      <string>F� de Jacques</string>
      </void>
      <void property="senha">
-      <string>abatho</string>
+      <string>seuqcajedaf</string>
      </void>
     </object>
    </void>
    <void method="put">
-    <string>jdoe</string>
+    <string>fa2dejacques</string>
     <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario2">
-     <void property="comunidades">
+     <void property="idolos">
       <void method="add">
-       <string>Comunidade de John</string>
+       <string>jpsauve</string>
       </void>
       <void method="add">
-       <string>Comunidade de Jacques</string>
+       <string>fadejacques</string>
       </void>
      </void>
      <void property="login">
-      <string>jdoe</string>
+      <string>fa2dejacques</string>
      </void>
      <void property="nome">
-      <string>John Doe</string>
+      <string>F� 2 de Jacques</string>
      </void>
-     <void property="recados">
+     <void property="senha">
+      <string>seuqcajedaf</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>paqueradejacques</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario3">
+     <void property="login">
+      <string>paqueradejacques</string>
+     </void>
+     <void property="nome">
+      <string>Paquera de Jacques</string>
+     </void>
+     <void property="paqueras">
       <void method="add">
-       <string>Recado de Osorio para John</string>
-      </void>
-      <void method="add">
-       <string>Recado de Jacques para John</string>
+       <string>jpsauve</string>
       </void>
      </void>
      <void property="senha">
-      <string>abc</string>
+      <string>abcdef</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>paquera2dejacques</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario4">
+     <void property="login">
+      <string>paquera2dejacques</string>
+     </void>
+     <void property="nome">
+      <string>Paquera 2 de Jacques</string>
+     </void>
+     <void property="paqueras">
+      <void method="add">
+       <string>jpsauve</string>
+      </void>
+      <void method="add">
+       <string>paqueradejacques</string>
+      </void>
+     </void>
+     <void property="senha">
+      <string>abcdef</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>inimigodejacques</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario5">
+     <void property="convitesEnviados">
+      <void method="add">
+       <string>inimigo2dejacques</string>
+      </void>
+     </void>
+     <void property="inimigos">
+      <void method="add">
+       <string>jpsauve</string>
+      </void>
+     </void>
+     <void property="login">
+      <string>inimigodejacques</string>
+     </void>
+     <void property="nome">
+      <string>Inimigo de Jacques</string>
+     </void>
+     <void property="recados">
+      <void method="add">
+       <string>fhdjfsd</string>
+      </void>
+     </void>
+     <void property="senha">
+      <string>abcdef</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>inimigo2dejacques</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario6">
+     <void property="inimigos">
+      <void method="add">
+       <string>jpsauve</string>
+      </void>
+      <void method="add">
+       <string>inimigodejacques</string>
+      </void>
+     </void>
+     <void property="login">
+      <string>inimigo2dejacques</string>
+     </void>
+     <void property="nome">
+      <string>Inimigo 2 de Jacques</string>
+     </void>
+     <void property="senha">
+      <string>abcdef</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>jacquespersistente</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario7">
+     <void property="convitesEnviados">
+      <void method="add">
+       <string>inimigopersistentedejacques</string>
+      </void>
+     </void>
+     <void property="fas">
+      <void method="add">
+       <string>fapersistentedejacques</string>
+      </void>
+     </void>
+     <void property="login">
+      <string>jacquespersistente</string>
+     </void>
+     <void property="nome">
+      <string>Jacques Persistente</string>
+     </void>
+     <void property="senha">
+      <string>abcdef</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>fapersistentedejacques</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario8">
+     <void property="idolos">
+      <void method="add">
+       <string>jacquespersistente</string>
+      </void>
+     </void>
+     <void property="login">
+      <string>fapersistentedejacques</string>
+     </void>
+     <void property="nome">
+      <string>F� Persistente de Jacques</string>
+     </void>
+     <void property="senha">
+      <string>seuqcajedaf</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>paquerapersistentedejacques</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario9">
+     <void property="login">
+      <string>paquerapersistentedejacques</string>
+     </void>
+     <void property="nome">
+      <string>Paquera Persistente de Jacques</string>
+     </void>
+     <void property="paqueras">
+      <void method="add">
+       <string>jacquespersistente</string>
+      </void>
+     </void>
+     <void property="senha">
+      <string>abcdef</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <string>inimigopersistentedejacques</string>
+    <object class="br.ufal.ic.p2.jackut.models.Usuario" id="Usuario10">
+     <void property="inimigos">
+      <void method="add">
+       <string>jacquespersistente</string>
+      </void>
+     </void>
+     <void property="login">
+      <string>inimigopersistentedejacques</string>
+     </void>
+     <void property="nome">
+      <string>Inimigo Persistente de Jacques</string>
+     </void>
+     <void property="senha">
+      <string>abcdef</string>
      </void>
     </object>
    </void>

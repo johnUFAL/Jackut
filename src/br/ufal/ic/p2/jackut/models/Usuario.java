@@ -1,8 +1,8 @@
 package br.ufal.ic.p2.jackut.models;
 
-import br.ufal.ic.p2.jackut.exceptions.usuarios.AtributoNaoPreenchido;
-import br.ufal.ic.p2.jackut.exceptions.usuarios.NaoHaMensagens;
-import br.ufal.ic.p2.jackut.exceptions.usuarios.NaoHaReacados;
+import br.ufal.ic.p2.jackut.exceptions.usuarios.AtributoNaoPreenchidoException;
+import br.ufal.ic.p2.jackut.exceptions.usuarios.NaoHaMensagensException;
+import br.ufal.ic.p2.jackut.exceptions.usuarios.NaoHaReacadosException;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -19,6 +19,10 @@ public class Usuario extends EntidadeJackut {
     private List<String> recados;
     private List<String> comunidades;
     private List<String> mensagens;
+    private List<String> idolos;
+    private List<String> fas;
+    private List<String> paqueras;
+    private List<String> inimigos;
 
     public Usuario() {
         super();
@@ -28,6 +32,10 @@ public class Usuario extends EntidadeJackut {
         this.recados = new ArrayList<>();
         this.comunidades = new ArrayList<>();
         this.mensagens = new ArrayList<>();
+        this.idolos = new ArrayList<>();
+        this.fas = new ArrayList<>();
+        this.paqueras = new ArrayList<>();
+        this.inimigos = new ArrayList<>();
     }
 
     public Usuario(String login, String senha, String nome) {
@@ -40,6 +48,10 @@ public class Usuario extends EntidadeJackut {
         this.recados = new ArrayList<>();
         this.comunidades = new ArrayList<>();
         this.mensagens = new ArrayList<>();
+        this.idolos = new ArrayList<>();
+        this.fas = new ArrayList<>();
+        this.paqueras = new ArrayList<>();
+        this.inimigos = new ArrayList<>();
     }
 
     public void adicionarAtributoPerfil(String atributo, String valor) {
@@ -47,7 +59,7 @@ public class Usuario extends EntidadeJackut {
     }
 
     public String getAtributoPerfil(String atributo) throws Exception {
-        if (!this.perfil.containsKey(atributo)) throw new AtributoNaoPreenchido();
+        if (!this.perfil.containsKey(atributo)) throw new AtributoNaoPreenchidoException();
         return this.perfil.get(atributo);
     }
 
@@ -106,12 +118,34 @@ public class Usuario extends EntidadeJackut {
         return sb.toString();
     }
 
+    public void adicionarIdolo(String idolo) {this.idolos.add(idolo);}
+    public void adionarFa(String fa) {this.fas.add(fa);}
+    public boolean ehFa(String idolo) {return this.idolos.contains(idolo);}
+
+    public void adicionarPaquera(String paquera) {this.paqueras.add(paquera);}
+    public boolean ehPaquera(String paquera) {return this.paqueras.contains(paquera);}
+
+    public void adionarInimigo(String inimigo) {this.inimigos.add(inimigo);}
+    public boolean temComoInimigo(String login) {return this.inimigos.contains(login);}
+
+    public String formatarLista(List<String> lista) {
+        StringBuilder sb = new StringBuilder("{");
+        for (int i = 0; i < lista.size(); i++) {
+            sb.append(lista.get(i));
+            if (i < lista.size() - 1) {
+                sb.append(",");
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
     public void receberMensagem(String mensagem) {
         this.mensagens.add(mensagem);
     }
 
     public String lerProximaMensagem() throws Exception {
-        if (this.mensagens.isEmpty()) throw  new NaoHaMensagens();
+        if (this.mensagens.isEmpty()) throw  new NaoHaMensagensException();
         return this.mensagens.remove(0);
     }
 
@@ -121,7 +155,7 @@ public class Usuario extends EntidadeJackut {
     }
 
     public String lerProximoRecado() throws Exception {
-        if (this.recados.isEmpty()) throw new NaoHaReacados();
+        if (this.recados.isEmpty()) throw new NaoHaReacadosException();
         return this.recados.remove(0);
     }
 
@@ -141,4 +175,12 @@ public class Usuario extends EntidadeJackut {
     public void setComunidades(List<String> comunidades) { this.comunidades = comunidades; }
     public List<String> getMensagens() { return mensagens; }
     public void setMensagens(List<String> mensagens) { this.mensagens = mensagens; }
+    public List<String> getIdolos() {return idolos;}
+    public void setIdolos(List<String> idolos) {this.idolos = idolos;}
+    public List<String> getFas() {return fas;}
+    public void setFas(List<String> fas) {this.fas = fas;}
+    public List<String > getPaqueras() {return paqueras;}
+    public void setPaqueras(List<String> paqueras) {this.paqueras = paqueras;}
+    public List<String> getInimigos() {return inimigos;}
+    public void setInimigos(List<String> inimigos) {this.inimigos = inimigos;}
 }
