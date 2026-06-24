@@ -1,12 +1,11 @@
-# User Story 9 - Remoção de conta - Teste de persistência
+# User Story 9 - Remoï¿½ï¿½o de conta - Teste de persistï¿½ncia
 
-expectError "Login ou senha inválidos." abrirSessao login=jpsauve senha=sauvejp
-expectError "Comunidade não existe." getDescricaoComunidade nome="UFCG"
+expectError "Login ou senha invï¿½lidos." abrirSessao login=jpsauve senha=sauvejp
+expectError "Comunidade nï¿½o existe." getDescricaoComunidade nome="UFCG"
 expect {} getComunidades login=oabath
 expect {} getAmigos login=oabath
 
 s2=abrirSessao login=oabath senha=abatho
-expectError "Não há recados." lerRecado id=${s2}
+expectError "Nï¿½o hï¿½ recados." lerRecado id=${s2}
 
 encerrarSistema
-quit

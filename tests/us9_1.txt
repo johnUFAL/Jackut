@@ -1,4 +1,4 @@
-# User Story 9 - Remoção de conta - Permita a um usuário encerrar sua conta no Jackut. Todas as suas informações devem sumir do sistema: relacionamentos, mensagens enviadas, perfil.
+# User Story 9 - Remoï¿½ï¿½o de conta - Permita a um usuï¿½rio encerrar sua conta no Jackut. Todas as suas informaï¿½ï¿½es devem sumir do sistema: relacionamentos, mensagens enviadas, perfil.
 
 zerarSistema
 
@@ -9,21 +9,20 @@ criarUsuario login=oabath senha=abatho nome="Osorio Abath"
 s2=abrirSessao login=oabath senha=abatho
 
 enviarRecado id=${s1} destinatario=oabath recado="Ola"
-criarComunidade id=${s1} nome="UFCG" descricao="Comunidade para professores, alunos e funcionários da UFCG"
+criarComunidade id=${s1} nome="UFCG" descricao="Comunidade para professores, alunos e funcionï¿½rios da UFCG"
 adicionarComunidade id=${s2} nome="UFCG"
 adicionarAmigo id=${s2} amigo=jpsauve
 
 removerUsuario id=${s1}
 
-expectError "Usuário não cadastrado." getAtributoUsuario login=jpsauve atributo=nome
-expectError "Comunidade não existe." getDescricaoComunidade nome="UFCG"
+expectError "Usuï¿½rio nï¿½o cadastrado." getAtributoUsuario login=jpsauve atributo=nome
+expectError "Comunidade nï¿½o existe." getDescricaoComunidade nome="UFCG"
 expect {} getComunidades login=oabath
 expect {} getAmigos login=oabath
-expectError "Não há recados." lerRecado id=${s2}
+expectError "Nï¿½o hï¿½ recados." lerRecado id=${s2}
 
 # tratamento de erros
 
-expectError "Usuário não cadastrado." removerUsuario id=${s1}
+expectError "Usuï¿½rio nï¿½o cadastrado." removerUsuario id=${s1}
 
 encerrarSistema
-quit
